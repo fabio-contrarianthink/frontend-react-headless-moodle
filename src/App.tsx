@@ -3,23 +3,15 @@ import {
     QueryClient,
     QueryClientProvider,
 } from '@tanstack/react-query'
-import './App.css'
-import { coreCoursesGetCourses } from '@services/moodle/moodleHeadlessClient';
+import { coreCoursesGetCourses } from '@/services/moodle/moodleHeadlessClient';
+import type { Course } from "@/types/moodle/course";
 
 const queryClient = new QueryClient();
-
-function App() {
-    return (
-        <QueryClientProvider client={queryClient}>
-        <Todos />
-        </QueryClientProvider>
-    )
-}
 
 function Todos() {
     const { isPending, error, data } = useQuery({
         queryKey: ["todos"],
-        queryFn: () => coreCoursesGetCourses().then((res) => res.json(), ),
+        queryFn: () => coreCoursesGetCourses(),
     });
 
     if (isPending)
@@ -32,13 +24,21 @@ function Todos() {
         return 'error';
     }
 
-    return (<div>
-        {data.map((dataEntry) => (
+    return (
+        <div>
+        {data.map((dataEntry: Course) => (
             <div>
             <p>id: {dataEntry.shortname}</p>
             </div>
         ))}
-        </div>);
+        </div>
+    );
 }
 
-export default App
+export default function App() {
+    return (
+        <QueryClientProvider client={queryClient}>
+        <Todos />
+        </QueryClientProvider>
+    )
+}

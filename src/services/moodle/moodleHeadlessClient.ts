@@ -1,3 +1,5 @@
+import type { Course } from "@/types/moodle/course";
+
 const apiRoot = "https://moodle.contrarianthink-staging.com/webservice/rest/server.php";
 
 const apiParamsConfiguration = {
@@ -29,7 +31,15 @@ async function functionCall(wsfunction: string)
 }
 
 
-export async function coreCoursesGetCourses()
+export async function coreCoursesGetCourses() : Promise<Course[]>
 {
-    return functionCall("core_course_get_courses");
+    try {
+        const response = await functionCall("core_course_get_courses");
+        const responseBody = await response.json();
+        return responseBody as Course[];
+    } catch (error) {
+        console.log(error);
+    }
+    return [];
 }
+
