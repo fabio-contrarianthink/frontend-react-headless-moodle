@@ -11,5 +11,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  plugins: [react(), tailwindcss(), tsconfigPaths()],
+  plugins: [react(), tsconfigPaths(), tailwindcss()],
 });

@@ -6,14 +6,16 @@ interface CourseCardProps {
 
 export default function CourseCard({ course }: CourseCardProps) {
   return (
-    <div className="max-w-xs min-w-xs rounded-md shadow-lg inset-shadow-xs flex-1 overflow-hidden">
-      <div className="">
-        <div className="">
-          <img src={course.courseimage} className="h-auto max-w-full"></img>
-        </div>
-        <div className="font-bold text-base py-3 px-6">
-          {course.displayname}
-        </div>
+    <div className="card bg-base-100 w-70 shadow-sm">
+      <figure>
+        <img
+          src={course.courseimage}
+          alt="Course Image"
+          className="h-auto max-w-full"
+        ></img>
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title font-serif">{course.displayname}</h2>
       </div>
     </div>
   );
