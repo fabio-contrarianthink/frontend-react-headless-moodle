@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend-react-headless-moodle-ingress-https
+  labels:
+    app: frontend-react-headless-moodle
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    # kubernetes.io/ingress.global-static-ip-name: "your-static-ip-name"  # Replace with your static IP name
+    # networking.gke.io/managed-certificates: "your-cert-name"  # Replace with your managed certificate name
+    kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/ingress.force-ssl-redirect: "true"
+spec:
+  defaultBackend:
+    service:
+      name: frontend-react-headless-moodle-service
+      port:
+        number: 80
+  rules:
+  - host: "contrarianthink-staging.com"  # Replace with your domain name, e.g., "example.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-react-headless-moodle-service
+            port:
+              number: 80

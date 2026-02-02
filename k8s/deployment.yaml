@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: us-east1-docker.pkg.dev/cdlayer/frontend-react-headless-moodle/frontend-react-headless-moodle:latest
+        image: us-east1-docker.pkg.dev/cdlayer/frontend-react-headless-moodle/frontend-react-headless-moodle:0.0.1
         ports:
         - containerPort: 80
           name: http
