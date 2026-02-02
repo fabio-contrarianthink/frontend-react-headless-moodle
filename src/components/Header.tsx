@@ -1,5 +1,6 @@
 import HeaderNavButton from "@/components/HeaderNavButton";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const headerButtons = [
   {
@@ -17,7 +18,7 @@ const headerButtons = [
 ];
 
 export default function Header() {
-  const [selectedButton, setSelectedButton] = useState<string>("");
+  const location = useLocation();
 
   return (
     <div className="bg-base-200 p-2">
@@ -26,9 +27,11 @@ export default function Header() {
           return (
             <HeaderNavButton
               key={index}
-              onClick={() => setSelectedButton(buttonData.label)}
-              isSelected={buttonData.label == selectedButton}
+              isSelected={
+                location.pathname.toLowerCase() === buttonData.url.toLowerCase()
+              }
               label={buttonData.label}
+              url={buttonData.url}
             />
           );
         })}

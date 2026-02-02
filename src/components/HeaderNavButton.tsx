@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
+
 interface HeaderNavButtonProps {
   label: string;
+  url: string;
   isSelected: boolean;
-  onClick: () => void;
 }
 
 export default function HeaderNavButton({
   label,
   isSelected,
-  onClick,
+  url,
 }: HeaderNavButtonProps) {
   let buttonClasses = "btn border-solid";
   if (isSelected) {
@@ -16,8 +18,8 @@ export default function HeaderNavButton({
     buttonClasses += " border-2 border-black";
   }
   return (
-    <button onClick={onClick} className={buttonClasses}>
+    <Link to={url} className={buttonClasses}>
       {label}
-    </button>
+    </Link>
   );
 }
