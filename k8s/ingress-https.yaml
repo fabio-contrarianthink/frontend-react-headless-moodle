@@ -17,7 +17,7 @@ spec:
       port:
         number: 80
   rules:
-  - host: "your-domain.com"  # Replace with your domain name, e.g., "example.com"
+  - host: "contrarianthink-staging.com"  # Replace with your domain name, e.g., "example.com"
     http:
       paths:
       - path: /
