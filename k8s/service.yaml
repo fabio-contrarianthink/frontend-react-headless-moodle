@@ -4,6 +4,9 @@ metadata:
   name: frontend-react-headless-moodle-service
   labels:
     app: frontend-react-headless-moodle
+  annotations:
+    cloud.google.com/load-balancer-type: "External"
+    cloud.google.com/neg: '{"ingress": true}'
 spec:
   type: LoadBalancer
   ports:
@@ -13,3 +16,7 @@ spec:
     name: http
   selector:
     app: frontend-react-headless-moodle
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
