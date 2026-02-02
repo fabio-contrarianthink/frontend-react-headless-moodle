@@ -1,0 +1,12 @@
+services:
+  frontend:
+    # Build the image using the local Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Map port 80 of the container to port 80 on your host machine
+    ports:
+      - "80:80"
+    # Restart the container if it stops
+    restart: always
+
