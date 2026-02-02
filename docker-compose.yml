@@ -1,5 +1,6 @@
 services:
   frontend:
+    image: vite-react-app:v1
     # Build the image using the local Dockerfile
     build:
       context: .

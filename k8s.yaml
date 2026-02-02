@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vite-react-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vite-react
+  template:
+    metadata:
+      labels:
+        app: vite-react
+    spec:
+      containers:
+      - name: vite-react-container
+        image: my-vite-react-app:v1
+        ports:
+        - containerPort: 80 # Or 5173 depending on Dockerfile
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vite-react-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: vite-react
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
