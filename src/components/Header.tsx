@@ -1,6 +1,7 @@
 import HeaderNavButton from "@/components/HeaderNavButton";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import LoginButton from "@/components/auth0/LoginButton";
 
 const headerButtons = [
   {
@@ -35,6 +36,9 @@ export default function Header() {
             />
           );
         })}
+        <div className="flex flex-1 justify-end">
+          <LoginButton />
+        </div>
       </div>
     </div>
   );
