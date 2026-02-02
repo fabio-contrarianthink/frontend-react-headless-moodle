@@ -11,7 +11,7 @@ export default function HeaderNavButton({
 }: HeaderNavButtonProps) {
   let buttonClasses = "btn border-solid";
   if (isSelected) {
-    buttonClasses += " btn-primary";
+    buttonClasses += " btn-primary text-black";
   } else {
     buttonClasses += " border-2 border-black";
   }
