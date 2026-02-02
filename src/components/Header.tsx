@@ -1,5 +1,4 @@
 import HeaderNavButton from "@/components/HeaderNavButton";
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import LoginButton from "@/components/auth0/LoginButton";
 
@@ -10,7 +9,7 @@ const headerButtons = [
   },
   {
     label: "Templates",
-    url: "/template",
+    url: "/templates",
   },
   {
     label: "Tool & Services",
