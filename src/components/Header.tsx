@@ -1,5 +1,8 @@
-import HeaderNavButton from "@/components/HeaderNavButton";
 import { useLocation } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import HeaderNavButton from "@/components/HeaderNavButton";
+import LoginButton from "@/components/auth0/LoginButton";
+import Profile from "@/components/auth0/Profile";
 
 const headerButtons = [
   {
@@ -8,7 +11,7 @@ const headerButtons = [
   },
   {
     label: "Templates",
-    url: "/template",
+    url: "/templates",
   },
   {
     label: "Tool & Services",
@@ -17,6 +20,7 @@ const headerButtons = [
 ];
 
 export default function Header() {
+  const { isAuthenticated, isLoading, error } = useAuth0();
   const location = useLocation();
 
   return (
@@ -34,6 +38,17 @@ export default function Header() {
             />
           );
         })}
+        <div className="flex flex-1 justify-end">
+          {!isLoading && !error ? (
+            isAuthenticated ? (
+              <Profile />
+            ) : (
+              <LoginButton />
+            )
+          ) : (
+            <div className="p-2">Loading...</div>
+          )}
+        </div>
       </div>
     </div>
   );

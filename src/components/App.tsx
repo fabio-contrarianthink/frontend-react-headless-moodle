@@ -3,13 +3,201 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import AuthLibrary from "@/components/moodle/AuthLibrary";
+import TemplateList from "@/components/atlas/TemplateList";
+
+const templateMockEntries = [
+  {
+    title: "Template 1",
+    description: "Description for Template 1",
+    url: "https://example.com/template1",
+  },
+  {
+    title: "Template 2",
+    description: "Description for Template 2",
+    url: "https://example.com/template2",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 1",
+    description: "Description for Template 1",
+    url: "https://example.com/template1",
+  },
+  {
+    title: "Template 2",
+    description: "Description for Template 2",
+    url: "https://example.com/template2",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 1",
+    description: "Description for Template 1",
+    url: "https://example.com/template1",
+  },
+  {
+    title: "Template 2",
+    description: "Description for Template 2",
+    url: "https://example.com/template2",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 1",
+    description: "Description for Template 1",
+    url: "https://example.com/template1",
+  },
+  {
+    title: "Template 2",
+    description: "Description for Template 2",
+    url: "https://example.com/template2",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+];
 
 const App: React.FC = () => {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Library" element={<AuthLibrary />} />
+        <Route path="/library" element={<AuthLibrary />} />
+        <Route
+          path="/templates"
+          element={<TemplateList entries={templateMockEntries} />}
+        />
       </Routes>
     </Layout>
   );
