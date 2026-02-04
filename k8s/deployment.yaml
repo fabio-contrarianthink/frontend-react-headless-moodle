@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-react-headless-moodle
+  labels:
+    app: frontend-react-headless-moodle
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend-react-headless-moodle
+  template:
+    metadata:
+      labels:
+        app: frontend-react-headless-moodle
+    spec:
+      containers:
+      - name: frontend
+        image: us-east1-docker.pkg.dev/cdlayer/frontend-react-headless-moodle/frontend-react-headless-moodle:latest
+        ports:
+        - containerPort: 80
+          name: http
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 5

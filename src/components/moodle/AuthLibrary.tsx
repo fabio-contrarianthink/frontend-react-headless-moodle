@@ -1,8 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useAuth0 } from "@auth0/auth0-react";
 import CourseLibrary from "@/components/moodle/CourseLibrary";
-import { getUserIdFromEmail } from "@/services/moodle/moodleHeadlessClient";
 
 const queryClient = new QueryClient();
 
