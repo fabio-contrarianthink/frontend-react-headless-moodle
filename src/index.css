@@ -22,6 +22,7 @@
   --color-secondary: #616F9D;
   --color-secondary-content: #F0EDE4;
   --color-accent: #F6C6C3;
+  --color-accent-2: #EBE4DB;
   --color-accent-content: oklch(14.685% 0.018 60.729);
   --color-neutral: #B5C0C3;
   --color-neutral-content: #1F1E1C;
@@ -61,3 +62,6 @@ html, body, #root {
     padding: 0;
 }
 
+.bg-accent-2 {
+    background-color: var(--color-accent-2);
+}

@@ -1,13 +1,15 @@
+import { useQuery } from "@tanstack/react-query";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useAuth0 } from "@auth0/auth0-react";
 import CourseLibrary from "@/components/moodle/CourseLibrary";
+import { getUserIdFromEmail } from "@/services/moodle/moodleHeadlessClient";
 
 const queryClient = new QueryClient();
 
 export default function Library() {
-  const { isAuthenticated, isLoading, error } = useAuth0();
+  const { isAuthenticated, isLoading, error, user } = useAuth0();
 
-  if (isAuthenticated) {
+  if (!isAuthenticated) {
     return <div className="">Please Authenticate to see library.</div>;
   }
 
@@ -15,13 +17,12 @@ export default function Library() {
     return <div className="">Loading...</div>;
   }
 
-  if (error) {
+  if (error || !user || !user.email) {
     return (
       <div className="">
         <div className="">
           <div className="">Oops!</div>
           <div className="">Something went wrong</div>
-          <div className="">{error.message}</div>
         </div>
       </div>
     );
@@ -30,7 +31,7 @@ export default function Library() {
   return (
     <div>
       <QueryClientProvider client={queryClient}>
-        <CourseLibrary />
+        <CourseLibrary userEmail={user.email!} />
       </QueryClientProvider>
     </div>
   );

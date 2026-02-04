@@ -51,6 +51,141 @@ const templateMockEntries = [
     description: "Description for Template 3",
     url: "https://example.com/template3",
   },
+  {
+    title: "Template 1",
+    description: "Description for Template 1",
+    url: "https://example.com/template1",
+  },
+  {
+    title: "Template 2",
+    description: "Description for Template 2",
+    url: "https://example.com/template2",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 1",
+    description: "Description for Template 1",
+    url: "https://example.com/template1",
+  },
+  {
+    title: "Template 2",
+    description: "Description for Template 2",
+    url: "https://example.com/template2",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 1",
+    description: "Description for Template 1",
+    url: "https://example.com/template1",
+  },
+  {
+    title: "Template 2",
+    description: "Description for Template 2",
+    url: "https://example.com/template2",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
+  {
+    title: "Template 3",
+    description: "Description for Template 3",
+    url: "https://example.com/template3",
+  },
 ];
 
 const App: React.FC = () => {

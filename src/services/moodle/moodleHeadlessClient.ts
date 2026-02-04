@@ -1,4 +1,5 @@
 import type { Course, UserCourse } from "@/types/moodle/course";
+import type { UserInfoList } from "@/types/moodle/webservice";
 
 const apiRoot =
   "https://moodle.contrarianthink-staging.com/webservice/rest/server.php";
@@ -69,4 +70,29 @@ export async function coreEnrolGetUsersCourses(
     console.log(error);
   }
   return [];
+}
+
+export async function coreUserGetUsers(
+  email: string,
+): Promise<UserInfoList | null> {
+  try {
+    const response = await functionCall("core_user_get_users", {
+      "criteria[0][key]": "email",
+      "criteria[0][value]": email,
+    });
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+  return null;
+}
+
+export async function getUserIdFromEmail(
+  email: string,
+): Promise<number | null> {
+  const userInfoList = await coreUserGetUsers(email);
+  if (userInfoList && userInfoList.users.length > 0) {
+    return userInfoList.users[0].id;
+  }
+  return null;
 }
