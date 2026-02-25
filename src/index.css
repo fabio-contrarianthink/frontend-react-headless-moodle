@@ -1,8 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-    themes: light --default, dark --prefersdark, autumn;
+  themes:
+    light --default,
+    dark --prefersdark,
+    autumn;
 }
-
 
 /* Theme generator
  * https://daisyui.com/theme-generator
@@ -16,16 +18,16 @@
   --color-base-100: oklch(95.814% 0 0);
   --color-base-200: oklch(89.107% 0 0);
   --color-base-300: oklch(82.4% 0 0);
-  --color-base-content: #1F1E1C;
-  --color-primary: #B5605A;
-  --color-primary-content: #F0EDE4;
-  --color-secondary: #616F9D;
-  --color-secondary-content: #F0EDE4;
-  --color-accent: #F6C6C3;
-  --color-accent-2: #EBE4DB;
+  --color-base-content: #1f1e1c;
+  --color-primary: #b5605a;
+  --color-primary-content: #f0ede4;
+  --color-secondary: #616f9d;
+  --color-secondary-content: #f0ede4;
+  --color-accent: #f6c6c3;
+  --color-accent-2: #ebe4db;
   --color-accent-content: oklch(14.685% 0.018 60.729);
-  --color-neutral: #B5C0C3;
-  --color-neutral-content: #1F1E1C;
+  --color-neutral: #b5c0c3;
+  --color-neutral-content: #1f1e1c;
   --color-info: oklch(69.224% 0.097 207.284);
   --color-info-content: oklch(13.844% 0.019 207.284);
   --color-success: oklch(60.995% 0.08 174.616);
@@ -44,8 +46,6 @@
   --noise: 0;
 }
 
-
-
 /* Custom theme configuration */
 @theme {
   --font-tino: "Tino", serif;
@@ -55,13 +55,15 @@
   --default-font-family: var(--font-roboto);
 }
 
-html, body, #root {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
+html,
+body,
+#root {
+  height: 100vh;
+  /* width: 100vw; */
+  margin: 0;
+  padding: 0;
 }
 
 .bg-accent-2 {
-    background-color: var(--color-accent-2);
+  background-color: var(--color-accent-2);
 }
