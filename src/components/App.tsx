@@ -4,6 +4,8 @@ import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import AuthLibrary from "@/components/moodle/AuthLibrary";
 import TemplateList from "@/components/atlas/TemplateList";
+import Profile from "@/pages/Profile";
+import { withAuthenticationRequired } from "@/middlewares/withAuthenticationRequired";
 
 const templateMockEntries = [
   {
@@ -197,6 +199,11 @@ const App: React.FC = () => {
         <Route
           path="/templates"
           element={<TemplateList entries={templateMockEntries} />}
+        />
+        {/* Wrap Profile with authentication HOC */}
+        <Route
+          path="/profile"
+          element={React.createElement(withAuthenticationRequired(Profile))}
         />
       </Routes>
     </Layout>
