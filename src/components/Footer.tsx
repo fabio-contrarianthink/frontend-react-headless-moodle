@@ -4,7 +4,7 @@ import VaultIcon from "@/components/icons/VaultIcon";
 
 export default function Footer() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 h-[72px] backdrop-blur-md border-t border-border flex items-center justify-around px-6 z-50 pb-safe md:justify-center md:gap-12">
+    <div className="fixed bottom-0 left-0 right-0 h-[72px] bg-background/90 backdrop-blur-md border-t border-border flex items-center justify-around px-6 z-50 pb-safe md:justify-center md:gap-12">
       <a href="/resources">
         <div className="flex flex-col items-center gap-1 cursor-pointer group md:flex-row md:gap-3">
           <ResourceIcon />

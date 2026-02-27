@@ -7,7 +7,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-w-fill min-h-full flex flex-col">
+    <div className="min-h-screen bg-background transition-colors duration-300">
       <Header />
       <div className="bg-base-200 flex-1">{children}</div>
       <Footer />

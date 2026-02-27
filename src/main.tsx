@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 import App from "@/components/App";
 import "@/index.css";
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
     >
       <BrowserRouter>
         <App />
+        <Toaster />
       </BrowserRouter>
     </Auth0Provider>
   </StrictMode>,
